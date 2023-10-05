@@ -19,23 +19,22 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools >=44
   run:
     - kaitaistruct
     - matplotlib-base
     - numpy
-    - python >=3.6
+    - python >=3.8
     - requests
 
 test:
   imports:
     - RigolWFM
   commands:
-    - pip check
-    - wfmconvert --help
+    - pytest tests/test_wfmconvert.py
   requires:
-    - pip
+    - pytest
 
 about:
   home: https://github.com/scottprahl/RigolWFM
@@ -46,7 +45,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file:
-    - LICENSE
+    - LICENSE.txt
   doc_url: https://RigolWFM.readthedocs.io/
   dev_url: https://github.com/scottprahl/RigolWFM
 
