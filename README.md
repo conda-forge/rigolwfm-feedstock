@@ -11,9 +11,9 @@ Summary: A comprehensive resource for interpreting waveform ``.wmf`` files creat
 by any Rigol oscilloscope.
 
 
-Development: https://github.com/scottprahl/RigolWFM
+Development: https://github.com/scottprahl/rigolwfm/
 
-Documentation: https://RigolWFM.readthedocs.io/
+Documentation: https://rigolwfm.readthedocs.io/
 
 Current build status
 ====================

@@ -1,5 +1,5 @@
 {% set name = "RigolWFM" %}
-{% set version = "0.9.9" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/RigolWFM-{{ version }}.tar.gz
-  sha256: 04f8ff23e17089b57eb7d9f233900aa47702e2e9c19d8a3ae6b2eb931d306697
+  sha256: fb61ab23d73ff414b39bfea9b077d94f28d032315df8a73070b18227b00a2894
 
 build:
   entry_points:
