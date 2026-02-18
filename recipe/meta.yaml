@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/RigolWFM-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/RigolWFM-{{ version }}.tar.gz
   sha256: fb61ab23d73ff414b39bfea9b077d94f28d032315df8a73070b18227b00a2894
 
 build:
@@ -14,21 +14,23 @@ build:
     - wfmconvert = RigolWFM.wfmconvert:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=44
   run:
     - kaitaistruct
     - matplotlib-base
     - numpy
-    - python >=3.8
+    - python >={{ python_min }}
     - requests
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - RigolWFM
   commands:
