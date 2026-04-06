@@ -1,5 +1,6 @@
 {% set name = "RigolWFM" %}
 {% set version = "1.5.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -13,16 +14,17 @@ build:
   entry_points:
     - wfmconvert = RigolWFM.wfmconvert:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   number: 0
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools >=44
+    - setuptools >=61
+    - wheel
   run:
-    - kaitaistruct
+    - kaitaistruct >=0.11
     - matplotlib-base
     - numpy
     - python >={{ python_min }}
@@ -39,8 +41,8 @@ test:
 about:
   home: https://github.com/scottprahl/RigolWFM
   summary: |
-    A comprehensive resource for interpreting waveform ``.wmf`` files created
-    by any Rigol oscilloscope.
+    Read, parse, and convert oscilloscope waveform files from Rigol and other
+    supported vendors.
 
   license: BSD-3-Clause
   license_family: BSD
